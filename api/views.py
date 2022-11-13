@@ -1,7 +1,7 @@
 from fastapi import APIRouter, Depends, HTTPException
 from fastapi_jwt_auth import AuthJWT
-from schemas import Login, Refresh, Token, User
-from services import get_user
+from schemas import Login, Refresh, Register, Token, User
+from services import add_user, get_user
 from utils import verify_password
 
 router = APIRouter()
@@ -37,4 +37,15 @@ def protected(authorize: AuthJWT = Depends()):
 
     current_user = authorize.get_jwt_subject()
     user = get_user(current_user)
+    return User(**user.__dict__)
+
+
+@router.post("/register", response_model=User)
+def protected(user: Register):
+    new_user = Register(
+        username=user.username,
+        password=user.password,
+        email=user.email,
+    )
+    user = add_user(new_user)
     return User(**user.__dict__)

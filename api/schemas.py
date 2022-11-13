@@ -11,6 +11,12 @@ class User(BaseModel):
     email: str
 
 
+class Register(BaseModel):
+    username: str
+    password: str
+    email: str
+
+
 class Token(BaseModel):
     username: str
     password: str
