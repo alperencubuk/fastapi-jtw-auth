@@ -1,0 +1,27 @@
+version: "3.9"
+
+services:
+
+  api:
+    build: ./api
+    ports:
+      - "80:8000"
+    command: uvicorn main:app --host 0.0.0.0 --reload
+    volumes:
+      - ./api:/usr/src/app
+    depends_on:
+      - database
+
+  database:
+    image: postgres:latest
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=alpha
+    ports:
+      - "5432:5432"
+
+volumes:
+  postgres_data:
