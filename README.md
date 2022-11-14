@@ -100,6 +100,7 @@ Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0Iiwia
 #### Request:
 ```http request
 GET /me
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0IiwiaWF0IjoxNjY4MzYyNDQ0LCJuYmYiOjE2NjgzNjI0NDQsImp0aSI6IjkxMzhjNmE1LWJlOTQtNGNiMy1hYzMwLTRjYTRiNDEyZDM2ZSIsImV4cCI6MTY2ODM2NjA0NCwidHlwZSI6ImFjY2VzcyIsImZyZXNoIjpmYWxzZX0.8d3_1OZTvcG2XFNl1-HVVLXjtmg5YrLCvmVcOH-Ldgc
 ```
 
 #### Response:
